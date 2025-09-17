@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CIA FIRST International School</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="icon.png">
+    <link rel="stylesheet" href="src/animate.css">
+	<link rel="stylesheet" type="text/css" href="src/styles.css">
+</head>
+<body>
+ 
+ <!-- Start Header  -->
+ <header>
+ 	 <div class="container">
+ 	 	<div class="logo">
+ 	 		 <a href="index.html">CIA FIRST</a>
+ 	 	</div>
+ 	 	<a href="javascript:void(0)" class="ham-burger">
+ 	       <span></span>	
+ 	       <span></span>
+ 	 	</a>
+ 	 	<div class="nav">
+ 	 		<ul>
+ 	 			<li><a href="index.html">Home</a></li>
+ 	 			<li><a href="index.html">Learning</a></li>
+ 	 			<li><a href="index.html">About</a></li>
+ 	 			<li><a href="index.html">Classes</a></li>
+ 	 			<li><a href="index.html">Schedule</a></li>
+ 	 			<li><a href="index.html">Enrollment</a></li>
+ 	 			<li><a href="index.html">Contact</a></li>
+ 	 		</ul>
+ 	 	</div>
+ 	 </div>
+ </header>
+ <!-- End Header  -->
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+ <section class="slo" id="slo">
+	<div class="content">
+		<h2>​School-wide Learner Outcomes (SLOs)</h2>
+		<br>
+        <p>The CIA FIRST’s School-wide Learner Outcomes (SLOs) are a set of twelve statements which describe what each CIA FIRST’s student will be able to independently use upon their graduation. SLOs have the following characteristics:</p><br>
+        <ul>
+            <li>They are overarching (not subject-specific)</li>
+            <li>They are performance based (require transfer of understandings, not simply recall)</li>
+            <li>They require the use of the Habits of Mind, in combination with academic understandings, knowledge, and skills.</li>
+            <li>The SLOs drive all of CIA FIRST’s curriculum. Every unit of the instruction contains one or more of the SLOs as the long-term transfer goal. Students’ ability to display the SLOs will develop and deepen over time as they progress through courses and grade levels.</li>
+        </ul>
+        <br><br><br>
+        <h2>Students will be able to independently use their learning to:</h2><br>
+        <ul>
+            <li>Communicate effectively for a wide variety of purposes and audiences within and across cultures, using a broad range of tools and media.</li>
+            <li>Improve efficiency, productivity, creativity and communication through the skillful use of existing, adaptation to emerging, and creation of new technologies.</li>
+            <li>Work both independently and collaboratively with others notwithstanding individual differences, choosing when to lead or follow.</li>
+            <li>Effectively handle conflicts and misunderstandings through the use of empathy.</li>
+            <li>Comprehend, analyze, evaluate and synthesize complex information to broaden and deepen understanding, and to apply and share it in an ethical manner.</li>
+            <li>Critically appraise information for validity and reliability in order to aid decision making and potential modification of personal worldview.</li>
+            <li>Make informed decisions after analyzing situations from multiple perspectives.</li>
+            <li>Evaluate social systems in terms of their ability to serve the needs of the people they are designed to serve.</li>
+            <li>Pose probing questions and plan and carry out both quantitative and qualitative investigations to answer them.</li>
+            <li>Identify existing and emerging problems and formulate, justify and apply effective and optimized solutions.</li>
+            <li>Display curiosity and appreciation for both natural phenomena and human endeavour, in order to determine interests, passions and aspirations.</li>
+            <li>Reflect on their habits of mind, worldviews, attitudes and learning, set achievable personal and academic goals, and develop and apply effective strategies for growth.</li>
+        </ul>
+	</div>
+    <br>
+ </section>
+ 
+ <footer></footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+
+      $(".ham-burger, .nav ul li a").click(function(){
+       
+        $(".nav").toggleClass("open")
+
+        $(".ham-burger").toggleClass("active");
+      })      
+      $(".accordian-container").click(function(){
+      	$(".accordian-container").children(".body").slideUp();
+      	$(".accordian-container").removeClass("active")
+      	$(".accordian-container").children(".head").children("span").removeClass("fa-angle-down").addClass("fa-angle-up")
+      	$(this).children(".body").slideDown();
+      	$(this).addClass("active")
+      	$(this).children(".head").children("span").removeClass("fa-angle-up").addClass("fa-angle-down")
+      })
+
+       $(".nav ul li a, .go-down").click(function(event){
+         if(this.hash !== ""){
+
+              event.preventDefault();
+
+              var hash=this.hash; 
+
+              $('html,body').animate({
+                scrollTop:$(hash).offset().top
+              },800 , function(){
+                 window.location.hash=hash;
+              });
+
+              // add active class in navigation
+              $(".nav ul li a").removeClass("active")
+              $(this).addClass("active")
+         }
+      })
+})
+
+</script>
+<script src="src/index.js"></script>
+<script>
+    wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset:       0,
+      }
+    );
+    wow.init();
+  </script>
+</body>
+</html>

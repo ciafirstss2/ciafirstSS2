@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CIA FIRST International School</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="icon.png">
+    <link rel="stylesheet" href="src/animate.css">
+	<link rel="stylesheet" type="text/css" href="src/styles.css">
+</head>
+<body>
+ 
+ <!-- Start Header  -->
+ <header>
+ 	 <div class="container">
+ 	 	<div class="logo">
+ 	 		 <a href="index.html">CIA FIRST</a>
+ 	 	</div>
+ 	 	<a href="javascript:void(0)" class="ham-burger">
+ 	       <span></span>	
+ 	       <span></span>
+ 	 	</a>
+ 	 	<div class="nav">
+ 	 		<ul>
+ 	 			<li><a href="index.html">Home</a></li>
+ 	 			<li><a href="index.html">Learning</a></li>
+ 	 			<li><a href="index.html">About</a></li>
+ 	 			<li><a href="index.html">Classes</a></li>
+ 	 			<li><a href="index.html">Schedule</a></li>
+ 	 			<li><a href="index.html">Enrollment</a></li>
+ 	 			<li><a href="index.html">Contact</a></li>
+ 	 		</ul>
+ 	 	</div>
+ 	 </div>
+ </header>
+ <!-- End Header  -->
+
+  <!-- Start Home -->
+  <section class="mshome" id="mshome">
+	<div class="container">
+		  <h1 class="wow slideInLeft" data-wow-delay="1s">MIDDLE SCHOOL</h1>
+	</div>
+	 <!-- go down -->
+		 <a href="#ms" class="go-down">
+			   <i class="fa fa-angle-down" aria-hidden="true"></i>
+		 </a>
+	 <!-- go down -->
+
+</section>
+<!-- End Home -->
+
+<br>
+<br>
+
+ <section class="ms" id="ms">
+	<div class="content">
+		<h2>MIDDLE SCHOOL</h2>
+		<br>
+        <p>By Middle School, students at CIA FIRST International School will continue their self-discovery and will start formulating an individual worldview. The syllabus will open up students to new abstract ideas and expose them to multiple perspectives which will aid their development in thinking.</p>
+        <br>
+        <p>This comes down to the philosophy of not imposing a particular worldview on students. The classroom is seen as a place to promote debate and discussion, allowing students to explore a wealth of opposing ideas to construct their own opinion. Students will not be told what to think but how to think.</p>
+        <br>
+        <p>At the middle school level, CIA FIRST ’s students are at a time of life where they are seeking to establish their own social identity. The middle school curriculum invites the students to explore the big ideas in life, examining such concepts as morality, justice, social structure and civic responsibility.</p>
+	</div>
+    <img src="https://www.ciaschool.edu.kh/uploads/1/2/4/1/124132936/published/school-level-curriculum-1.png?1579486860">
+    <br><br>
+ </section>
+ 
+ <footer></footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+
+      $(".ham-burger, .nav ul li a").click(function(){
+       
+        $(".nav").toggleClass("open")
+
+        $(".ham-burger").toggleClass("active");
+      })      
+      $(".accordian-container").click(function(){
+      	$(".accordian-container").children(".body").slideUp();
+      	$(".accordian-container").removeClass("active")
+      	$(".accordian-container").children(".head").children("span").removeClass("fa-angle-down").addClass("fa-angle-up")
+      	$(this).children(".body").slideDown();
+      	$(this).addClass("active")
+      	$(this).children(".head").children("span").removeClass("fa-angle-up").addClass("fa-angle-down")
+      })
+
+       $(".nav ul li a, .go-down").click(function(event){
+         if(this.hash !== ""){
+
+              event.preventDefault();
+
+              var hash=this.hash; 
+
+              $('html,body').animate({
+                scrollTop:$(hash).offset().top
+              },800 , function(){
+                 window.location.hash=hash;
+              });
+
+              // add active class in navigation
+              $(".nav ul li a").removeClass("active")
+              $(this).addClass("active")
+         }
+      })
+})
+
+</script>
+<script src="src/index.js"></script>
+<script>
+    wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset:       0,
+      }
+    );
+    wow.init();
+  </script>
+</body>
+</html>

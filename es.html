@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CIA FIRST International School</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="icon.png">
+    <link rel="stylesheet" href="src/animate.css">
+	<link rel="stylesheet" type="text/css" href="src/styles.css">
+</head>
+<body>
+ 
+ <!-- Start Header  -->
+ <header>
+ 	 <div class="container">
+ 	 	<div class="logo">
+ 	 		 <a href="index.html">CIA FIRST</a>
+ 	 	</div>
+ 	 	<a href="javascript:void(0)" class="ham-burger">
+ 	       <span></span>	
+ 	       <span></span>
+ 	 	</a>
+ 	 	<div class="nav">
+ 	 		<ul>
+ 	 			<li><a href="index.html">Home</a></li>
+ 	 			<li><a href="index.html">Learning</a></li>
+ 	 			<li><a href="index.html">About</a></li>
+ 	 			<li><a href="index.html">Classes</a></li>
+ 	 			<li><a href="index.html">Schedule</a></li>
+ 	 			<li><a href="index.html">Enrollment</a></li>
+ 	 			<li><a href="index.html">Contact</a></li>
+ 	 		</ul>
+ 	 	</div>
+ 	 </div>
+ </header>
+ <!-- End Header  -->
+
+  <!-- Start Home -->
+  <section class="eshome" id="eshome">
+	<div class="container">
+		  <h1 class="wow slideInLeft" data-wow-delay="1s">ELEMENTARY SCHOOL</h1>
+	</div>
+	 <!-- go down -->
+		 <a href="#es" class="go-down">
+			   <i class="fa fa-angle-down" aria-hidden="true"></i>
+		 </a>
+	 <!-- go down -->
+
+</section>
+<!-- End Home -->
+
+<br>
+<br>
+
+ <section class="es" id="es">
+	<div class="content">
+		<h2>ELEMENTARY SCHOOL</h2>
+		<br>
+        <p>​The Elementary School at CIA FIRST is full of excitement, high expectations, and a fun five years of learning during these formative years. Here the students are coming to school with their eyes wide and hands ready to work individually and in groups.</p>
+        <br>
+        <p>CIA FIRST believes that elementary learning is one of the most vital parts of nurturing a child for the future. We believe that children experimenting and unearthing concepts and processes themselves, is the best way to develop well-rounded individuals, rather than simply memorizing facts. CIA FIRST believes that working as part of a team is an essential life skill and the school puts emphasis on ensuring children can operate collectively among their peers. This helps build the confidence of children and also leads them to communicate their ideas clearly on an individual basis.  They are provided with instructions aligned to international standards.</p>
+        <br>
+        <p>As well as introducing children to subjects including maths, IT and combined natural sciences, the school begins integrating the 16 “Habits of Mind” learning process, which serves to aid students in working through real-life problems by using intentional strategies to gain positive outcomes.</p>
+	</div>
+    <img src="https://www.ciaschool.edu.kh/uploads/1/2/4/1/124132936/screen-shot-2019-07-17-at-14-40-25_orig.png">
+    <br><br><br>
+ </section>
+ 
+ <footer></footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+
+      $(".ham-burger, .nav ul li a").click(function(){
+       
+        $(".nav").toggleClass("open")
+
+        $(".ham-burger").toggleClass("active");
+      })      
+      $(".accordian-container").click(function(){
+      	$(".accordian-container").children(".body").slideUp();
+      	$(".accordian-container").removeClass("active")
+      	$(".accordian-container").children(".head").children("span").removeClass("fa-angle-down").addClass("fa-angle-up")
+      	$(this).children(".body").slideDown();
+      	$(this).addClass("active")
+      	$(this).children(".head").children("span").removeClass("fa-angle-up").addClass("fa-angle-down")
+      })
+
+       $(".nav ul li a, .go-down").click(function(event){
+         if(this.hash !== ""){
+
+              event.preventDefault();
+
+              var hash=this.hash; 
+
+              $('html,body').animate({
+                scrollTop:$(hash).offset().top
+              },800 , function(){
+                 window.location.hash=hash;
+              });
+
+              // add active class in navigation
+              $(".nav ul li a").removeClass("active")
+              $(this).addClass("active")
+         }
+      })
+})
+
+</script>
+<script src="src/index.js"></script>
+<script>
+    wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset:       0,
+      }
+    );
+    wow.init();
+  </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CIA FIRST International School</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="icon.png">
+    <link rel="stylesheet" href="src/animate.css">
+	<link rel="stylesheet" type="text/css" href="src/styles.css">
+</head>
+<body>
+ 
+ <!-- Start Header  -->
+ <header>
+ 	 <div class="container">
+ 	 	<div class="logo">
+ 	 		 <a href="index.html">CIA FIRST</a>
+ 	 	</div>
+ 	 	<a href="javascript:void(0)" class="ham-burger">
+ 	       <span></span>	
+ 	       <span></span>
+ 	 	</a>
+ 	 	<div class="nav">
+ 	 		<ul>
+ 	 			<li><a href="index.html">Home</a></li>
+ 	 			<li><a href="index.html">Learning</a></li>
+ 	 			<li><a href="index.html">About</a></li>
+ 	 			<li><a href="index.html">Classes</a></li>
+ 	 			<li><a href="index.html">Schedule</a></li>
+ 	 			<li><a href="index.html">Enrollment</a></li>
+ 	 			<li><a href="index.html">Contact</a></li>
+ 	 		</ul>
+ 	 	</div>
+ 	 </div>
+ </header>
+ <!-- End Header  -->
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+ <section class="hom" id="hom">
+	<div class="content">
+		<h2>​HABITS OF MIND</h2>
+		<br>
+		<p>At CIA FIRST International School we integrate the 16 Habits of Mind in the learning process. The Habits of Mind is a set of 16 thinking skills for self-directed and lifelong learners. The understanding and application of these skills serve to aid students in working through real-life problems by using intentional strategies to gain positive outcomes.</p>
+	</div>
+    <img src="https://mindfulbydesign.com/wp-content/uploads/2020/05/16-Habits-of-Mind-837x1024.jpg">
+    <br>
+    <h2>Know More About Habits Of Mind:</h2><br>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/t1QEcC7msCs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <br><br><br>
+ </section>
+ 
+ <footer></footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+
+      $(".ham-burger, .nav ul li a").click(function(){
+       
+        $(".nav").toggleClass("open")
+
+        $(".ham-burger").toggleClass("active");
+      })      
+      $(".accordian-container").click(function(){
+      	$(".accordian-container").children(".body").slideUp();
+      	$(".accordian-container").removeClass("active")
+      	$(".accordian-container").children(".head").children("span").removeClass("fa-angle-down").addClass("fa-angle-up")
+      	$(this).children(".body").slideDown();
+      	$(this).addClass("active")
+      	$(this).children(".head").children("span").removeClass("fa-angle-up").addClass("fa-angle-down")
+      })
+
+       $(".nav ul li a, .go-down").click(function(event){
+         if(this.hash !== ""){
+
+              event.preventDefault();
+
+              var hash=this.hash; 
+
+              $('html,body').animate({
+                scrollTop:$(hash).offset().top
+              },800 , function(){
+                 window.location.hash=hash;
+              });
+
+              // add active class in navigation
+              $(".nav ul li a").removeClass("active")
+              $(this).addClass("active")
+         }
+      })
+})
+
+</script>
+<script src="src/index.js"></script>
+<script>
+    wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset:       0,
+      }
+    );
+    wow.init();
+  </script>
+</body>
+</html>
